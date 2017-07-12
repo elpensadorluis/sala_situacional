@@ -33,7 +33,10 @@
                                 {{ form.username.label_tag }}
                             </label>
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                {{ form.username }}
+                                <div class="form-inline">
+                                    {{ form.username }}
+                                    <i class="ion ion-ios-medical item-requerido"></i>
+                                </div>
                                 {% include 'base.form.errors.html' with form_errors=form.username.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
                             </div>
                         </div>
@@ -46,7 +49,10 @@
                                 {{ form.password.label_tag }}
                             </label>
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                {{ form.password }}
+                                <div class="form-inline">
+                                    {{ form.password }}
+                                    <i class="ion ion-ios-medical item-requerido"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
