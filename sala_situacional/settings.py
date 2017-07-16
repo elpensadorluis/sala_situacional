@@ -89,7 +89,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'sala_situacional',
-        'USER': 'postgres',
+        'USER': 'admin',
         'PASSWORD': '123',
         'HOST': 'localhost',
         'PORT': '5432',
