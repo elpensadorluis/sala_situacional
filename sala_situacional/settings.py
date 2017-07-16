@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'base',
     'usuario',
     'comando_zamora_200',
+    'encuesta',
 ]
 
 MIDDLEWARE = [
@@ -57,11 +58,12 @@ ROOT_URLCONF = 'sala_situacional.urls'
 BASE_TEMPLATES = os.path.join(BASE_DIR, "base/templates")
 USUARIO_TEMPLATES = os.path.join(BASE_DIR, "usuario/templates")
 COMANDO_ZAMORA_200_TEMPLATES = os.path.join(BASE_DIR, "comando_zamora_200/templates")
+ENCUESTA_TEMPLATES = os.path.join(BASE_DIR, "encuesta/templates")
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_TEMPLATES, USUARIO_TEMPLATES, COMANDO_ZAMORA_200_TEMPLATES],
+        'DIRS': [BASE_TEMPLATES, USUARIO_TEMPLATES, COMANDO_ZAMORA_200_TEMPLATES, ENCUESTA_TEMPLATES],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

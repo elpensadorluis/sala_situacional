@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^', include('base.urls')),
     url(r'^usuario/', include('usuario.urls')),
     url(r'^comando-zamora-200/', include('comando_zamora_200.urls')),
+    url(r'^encuesta/', include('encuesta.urls')),
 ]
