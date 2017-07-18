@@ -3,12 +3,37 @@
 {% block contenido %}
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="text-left">Encuesta 1</h3>
-            <p class="text-left">Registro</p>
+            <h3 class="text-left"> <strong>Grupo de Demoscopia Nacional</strong></h3>
+            <p class="text-left">
+              
+              Buenas tardes (o días o noches). Le estamos llamando del grupo de demoscopia nacional que se encarga de estudiar las opiniones e intereses de los venezolanos.
+              Queremos hacerle una encuesta muy corta, solo 4 preguntas ¿desea colaborar? Por favor, en cada pregunta escuche todas las opciones de respuesta y solo después
+              escoja una de ellas como su respuesta.
+            </p>
         </div>
         <div class="panel-body">
 	        <form action="" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
                 {% csrf_token %}
+
+                <div class="row">
+                    <!-- Temporal lineas -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group {% if form.telefono.errors %}has-error{% endif %}">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.telefono.auto_id }}">
+                                {{ form.telefono.label }}
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    {{ form.telefono }}
+                                    <i class="ion ion-ios-medical item-requerido"></i>
+                                </div>
+                                {{ form.telefono.help_text }}
+                                {% include 'base.form.errors.html' with form_errors=form.telefono.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin temporal lineas -->
+                </div>
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="form-group {% if form.pregunta1.errors %}has-error{% endif %}">
@@ -85,21 +110,6 @@
                                     <i class="ion ion-ios-medical item-requerido"></i>
                                 </div>
                                 {% include 'base.form.errors.html' with form_errors=form.pregunta3.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group {% if form.telefono.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.telefono.auto_id }}">
-                                {{ form.telefono.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
-                                <div class="form-inline">
-                                    {{ form.telefono }}
-                                    <i class="ion ion-ios-medical item-requerido"></i>
-                                </div>
-                                {{ form.telefono.help_text }}
-                                {% include 'base.form.errors.html' with form_errors=form.telefono.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
                             </div>
                         </div>
                     </div>

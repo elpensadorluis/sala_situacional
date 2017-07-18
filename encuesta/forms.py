@@ -6,10 +6,10 @@ from .models import Encuesta1
 class Encuesta1Form(forms.ModelForm):
     pregunta1 = forms.ChoiceField(
         label=_("1 ¿Para qué cree Ud. que sería útil una Asamblea Constituyente?"),
-        choices=(('',_('Seleccione...')),)+PREGUNTA1,
+        choices=(('',_('Seleccione una de las opciones')),)+PREGUNTA1,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:100%;',
                 'title': _("Seleccione una de las opciones"),
             }
         )
@@ -17,10 +17,10 @@ class Encuesta1Form(forms.ModelForm):
 
     pregunta2 = forms.ChoiceField(
         label=_("2 ¿Apoya usted la Convocatoria a la Asamblea Nacional Constituyente hecha por Nicolas Maduro?"),
-        choices=(('',_('Seleccione...')),)+SI_NO,
+        choices=(('',_('Seleccione una de las opciones')),)+SI_NO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:100%;',
                 'title': _("Seleccione una de las opciones"), 'onchange': "__pregunta2(this.value);"
             }
         )
@@ -28,10 +28,10 @@ class Encuesta1Form(forms.ModelForm):
 
     pregunta2_1 = forms.ChoiceField(
         label=_("2.1 Indique la Razón"),
-        choices=(('',_('Seleccione...')),)+PREGUNTA2_1,
+        choices=(('',_('Seleccione una de las opciones')),)+PREGUNTA2_1,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:100%;',
                 'title': _("Seleccione una de las opciones"),
             }
         ), required=False
@@ -39,10 +39,10 @@ class Encuesta1Form(forms.ModelForm):
 
     pregunta2_2 = forms.ChoiceField(
         label=_("2.2 Indique la Razón"),
-        choices=(('',_('Seleccione...')),)+PREGUNTA2_2,
+        choices=(('',_('Seleccione una de las opciones')),)+PREGUNTA2_2,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:100%;',
                 'title': _("Seleccione una de las opciones"),
             }
         ), required=False
@@ -50,10 +50,10 @@ class Encuesta1Form(forms.ModelForm):
 
     pregunta3 = forms.ChoiceField(
         label=_("3 Si las elecciones a la Presidencia de la República fueran hoy, ¿por quien votaría usted?"),
-        choices=(('',_('Seleccione...')),)+PREGUNTA3,
+        choices=(('',_('Seleccione una de las opciones')),)+PREGUNTA3,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:100%;',
                 'title': _("Seleccione una de las opciones"),
             }
         )

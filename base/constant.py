@@ -45,7 +45,7 @@ PREGUNTA2_2 = (
 )
 
 PREGUNTA3 = (
-    ("a",_("Candidato de la Revolución")),
+    ("a",_("Candidato del Oficialismo")),
     ("b",_("Candidato de la Oposición")),
     ("c",_("Candidato Independiente")),
     ("d",_("No votaría")),
