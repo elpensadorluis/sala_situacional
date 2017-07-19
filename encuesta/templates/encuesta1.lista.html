@@ -20,6 +20,7 @@
                                 <th>2.1 Indique la Razón</th>
                                 <th>2.2 Indique la Razón</th>
                                 <th>3 Si las elecciones a la Presidencia de la República fueran hoy, ¿por quien votaría usted?</th>
+                                <th>4 Candidato</th>
 
                                 <th>Operación</th>
                             </tr>
@@ -33,6 +34,7 @@
                                 <td> {{ encuesta1.get_pregunta2_1_display }} </td>
                                 <td> {{ encuesta1.get_pregunta2_2_display }} </td>
                                 <td> {{ encuesta1.get_pregunta3.display }} </td>
+                                <td> {{ encuesta1.get_pregunta4.display }} </td>
 
                                 <td> <a href="#">Editar</a> | <a href="#">Eliminar</a> </td>
                                 </tr>
@@ -81,6 +83,7 @@
                     { "width": "250px", "targets": 4 },
                     { "width": "250px", "targets": 5 },
                     { "width": "250px", "targets": 6 },
+                    { "width": "250px", "targets": 7 },
                 ],
             });
 

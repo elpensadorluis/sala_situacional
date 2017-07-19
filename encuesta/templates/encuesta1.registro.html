@@ -5,7 +5,7 @@
         <div class="panel-heading">
             <h3 class="text-left"> <strong>Grupo de Demoscopia Nacional</strong></h3>
             <p class="text-left">
-              
+
               Buenas tardes (o días o noches). Le estamos llamando del grupo de demoscopia nacional que se encarga de estudiar las opiniones e intereses de los venezolanos.
               Queremos hacerle una encuesta muy corta, solo 4 preguntas ¿desea colaborar? Por favor, en cada pregunta escuche todas las opciones de respuesta y solo después
               escoja una de ellas como su respuesta.
@@ -113,6 +113,21 @@
                             </div>
                         </div>
                     </div>
+                    <div id="bloque_pregunta4" class="invisible">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group {% if form.prregunta4.errors %}has-error{% endif %}">
+                                <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta4.auto_id }}">
+                                    {{ form.pregunta4.label }}
+                                </label>
+                                <div class="col-md-9 col-xs-9 col-sm-9">
+                                    <div class="form-inline">
+                                        {{ form.pregunta4 }}
+                                    </div>
+                                    {% include 'base.form.errors.html' with form_errors=form.pregunta4.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="text-right">
@@ -131,11 +146,13 @@
             if(val=="S")
             {
                 $("#bloque_pregunta2_1").removeClass('invisible');
+                $("#bloque_pregunta4").removeClass('invisible');
                 $("#bloque_pregunta2_2").addClass('invisible');
             }
             else if(val=="N")
             {
                 $("#bloque_pregunta2_1").addClass('invisible');
+                $("#bloque_pregunta4").addClass('invisible');
                 $("#bloque_pregunta2_2").removeClass('invisible');
             }
         }

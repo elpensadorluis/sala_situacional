@@ -50,3 +50,21 @@ PREGUNTA3 = (
     ("c",_("Candidato Independiente")),
     ("d",_("No votaría")),
 )
+
+PREGUNTA4 = (
+    ("1",_("1.- Jehyson Jose Guzman Araque / Simon Pablo Figueroa")),
+    ("2",_("2.- Agustin Alexis Alvarez Tovar / Lorenza Ullan Severino")),
+    ("3",_("3.- Betty Carolina PeÑa Lopez")),
+    ("4",_("4.- Elias Rafael Sanchez Verde / Juan Carlos Lenzo")),
+    ("5",_("5.- Enrique Antonio Plata Ramirez / Teresa De Jesus Mora ")),
+    ("6",_("6.- Nelsy Carolina Rivera Quinchoa")),
+    ("7",_("7.- Luis Carlos Perales Araque")),
+    ("8",_("8.- Johnny Rafael Andrade Barreto")),
+    ("9",_("9.- Jorge David Sandoval Rujano")),
+    ("10",_("10.- Gracian Claret Rondon Dezeo")),
+    ("11",_("11.- Greny Rosana Uzcategui Lacruz")),
+    ("12",_("12.- Hector Ramon Rojas Pernia")),
+    ("13",_("13.- Wilmer Arquimedes Iglesias Pino / Ramon David Fajardo Guanipa")),
+    ("14",_("14.- Alirio Jose Liscano ")),
+    ("15",_("15.- Jose Rafael Luna ")),
+)

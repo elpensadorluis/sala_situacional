@@ -29,6 +29,7 @@ class Encuesta1Create(CreateView):
         self.object.pregunta2_1 = form.cleaned_data['pregunta2_1']
         self.object.pregunta2_2 = form.cleaned_data['pregunta2_2']
         self.object.pregunta3 = form.cleaned_data['pregunta3']
+        self.object.pregunta4 = form.cleaned_data['pregunta4']
         self.object.telefono = form.cleaned_data['telefono']
         self.object.user = user
         self.object.save()

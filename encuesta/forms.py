@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from base.constant import PREGUNTA1, PREGUNTA2_1, PREGUNTA2_2, PREGUNTA3, SI_NO
+from base.constant import PREGUNTA1, PREGUNTA2_1, PREGUNTA2_2, PREGUNTA3, SI_NO, PREGUNTA4
 from .models import Encuesta1
 
 class Encuesta1Form(forms.ModelForm):
@@ -59,6 +59,17 @@ class Encuesta1Form(forms.ModelForm):
         )
     )
 
+    pregunta4 = forms.ChoiceField(
+        label=_("4 En el ambito terrritorial, ¿cual candidato apoya usted?"),
+        choices=(('',_('Seleccione una de las opciones')),)+PREGUNTA4,
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:100%;',
+                'title': _("Seleccione una de las opciones"),
+            }
+        )
+    )
+
     ## Número telefónico de contacto con el usuario
     telefono = forms.CharField(
         label=_("Teléfono:"),
@@ -76,4 +87,3 @@ class Encuesta1Form(forms.ModelForm):
     class Meta:
         model = Encuesta1
         exclude = ['user']
-
