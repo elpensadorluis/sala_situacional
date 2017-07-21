@@ -1,160 +1,267 @@
-{% extends 'base.template.html' %}
-{% load i18n %}
+{% extends 'base.template.html' %} {% load i18n %}
+
 {% block contenido %}
+
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="text-left"> <strong>Grupo de Demoscopia Nacional</strong></h3>
-            <p class="text-left">
+      <div class="panel-heading">
+        <h3 class="text-left"> <strong>Grupo de Demoscopia Nacional</strong></h3>
+        <p class="text-left">
 
-              Buenas tardes (o días o noches). Le estamos llamando del grupo de demoscopia nacional que se encarga de estudiar las opiniones e intereses de los venezolanos.
-              Queremos hacerle una encuesta muy corta, solo 4 preguntas ¿desea colaborar? Por favor, en cada pregunta escuche todas las opciones de respuesta y solo después
-              escoja una de ellas como su respuesta.
-            </p>
-        </div>
-        <div class="panel-body">
-	        <form action="" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
-                {% csrf_token %}
+          Buenas tardes (o días o noches). Le estamos llamando del grupo de demoscopia nacional que se encarga de estudiar las opiniones e intereses de los venezolanos. Queremos hacerle una encuesta muy corta, solo 4 preguntas ¿desea colaborar? Por favor, en cada
+          pregunta escuche todas las opciones de respuesta y solo después escoja una de ellas como su respuesta.
+        </p>
+      </div>
+      <div class="panel-body">
+        <!-- <form action="" role="form" class="form form-horizontal " method="post" autocomplete="off">
+          {% csrf_token %} -->
 
-                <div class="row">
-                    <!-- Temporal lineas -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+          <!-- inicio de nuevos datos -->
+          <div class="container">
+          <div class="stepwizard">
+              <div class="stepwizard-row setup-panel">
+                  <div class="stepwizard-step">
+                      <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                      <p>Paso 1</p>
+                  </div>
+                  <div class="stepwizard-step">
+                      <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                      <p>Paso 2</p>
+                  </div>
+                  <div class="stepwizard-step">
+                      <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                      <p>Paso 3</p>
+                  </div>
+                  <div class="stepwizard-step">
+                      <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                      <p>Paso 4</p>
+                  </div>
+                  <div class="stepwizard-step">
+                      <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                      <p>Paso 5</p>
+                  </div>
+              </div>
+          </div>
+          <form action="" role="form" class="form form-horizontal " method="post" autocomplete="off">
+            {% csrf_token %}
+              <div class="row setup-content" id="step-1">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+
                         <div class="form-group {% if form.telefono.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.telefono.auto_id }}">
-                                {{ form.telefono.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
-                                <div class="form-inline">
-                                    {{ form.telefono }}
-                                    <i class="ion ion-ios-medical item-requerido"></i>
-                                </div>
-                                {{ form.telefono.help_text }}
-                                {% include 'base.form.errors.html' with form_errors=form.telefono.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                          <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.telefono.auto_id }}">
+                                              {{ form.telefono.label }}
+                                          </label>
+                          <div class="col-md-9 col-xs-9 col-sm-9">
+                            <div class="form-inline">
+                              {{ form.telefono }}
+                              <i class="ion ion-ios-medical item-requerido"></i>
                             </div>
-                        </div>
-                    </div>
-                    <!-- fin temporal lineas -->
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group {% if form.pregunta1.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta1.auto_id }}">
-                                {{ form.pregunta1.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
-                                <div class="form-inline">
-                                    {{ form.pregunta1 }}
-                                    <i class="ion ion-ios-medical item-requerido"></i>
-                                </div>
-                                {% include 'base.form.errors.html' with form_errors=form.pregunta1.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group {% if form.pregunta2.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta2.auto_id }}">
-                                {{ form.pregunta2.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
-                                <div class="form-inline">
-                                    {{ form.pregunta2 }}
-                                    <i class="ion ion-ios-medical item-requerido"></i>
-                                </div>
-                                {% include 'base.form.errors.html' with form_errors=form.pregunta2.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            {{ form.telefono.help_text }} {% include 'base.form.errors.html' with form_errors=form.telefono.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                          </div>
 
-                <div class="row">
-                    <div id="bloque_pregunta2_1" class="invisible">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group {% if form.prregunta2_1.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta2_1.auto_id }}">
-                                {{ form.pregunta2_1.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
+                          <p><strong><br><br>**Si no desea participar ir directamente al paso 5</strong></p>
+                        </div>
+
+
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-2">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="form-group {% if form.pregunta1.errors %}has-error{% endif %}">
+                            <label class="col-md-6 col-xs-6 col-sm6 control-label" for="{{ form.pregunta1.auto_id }}">
+                                                {{ form.pregunta1.label }}
+                                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                              <div class="form-inline">
+                                {{ form.pregunta1 }}
+                                <!-- <i class="ion ion-ios-medical item-requerido"></i> -->
+                              </div>
+                              {% include 'base.form.errors.html' with form_errors=form.pregunta1.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-3">
+                  <div class="row">
+
+                  </div>
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="form-group {% if form.pregunta2.errors %}has-error{% endif %}">
+                            <label class="col-md-8 col-xs-8 col-sm-8 control-label" for="{{ form.pregunta2.auto_id }}">
+                                                {{ form.pregunta2.label }}
+                                            </label>
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                              <div class="form-inline">
+                                {{ form.pregunta2 }}
+                                <!-- <i class="ion ion-ios-medical item-requerido"></i> -->
+                              </div>
+                              {% include 'base.form.errors.html' with form_errors=form.pregunta2.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div id="bloque_pregunta2_1" class="invisible">
+                          <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group {% if form.prregunta2_1.errors %}has-error{% endif %}">
+                              <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta2_1.auto_id }}">
+                                                {{ form.pregunta2_1.label }}
+                                            </label>
+                              <div class="col-md-9 col-xs-9 col-sm-9">
                                 <div class="form-inline">
-                                    {{ form.pregunta2_1 }}
+                                  {{ form.pregunta2_1 }}
                                 </div>
                                 {% include 'base.form.errors.html' with form_errors=form.pregunta2_1.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                              </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                    </div>
-                    <div id="bloque_pregunta2_2" class="invisible">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group {% if form.pregunta2_2.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta2_2.auto_id }}">
-                                {{ form.pregunta2_2.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
+                        <div id="bloque_pregunta2_2" class="invisible">
+                          <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group {% if form.pregunta2_2.errors %}has-error{% endif %}">
+                              <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta2_2.auto_id }}">
+                                                {{ form.pregunta2_2.label }}
+                                            </label>
+                              <div class="col-md-9 col-xs-9 col-sm-9">
                                 <div class="form-inline">
-                                    {{ form.pregunta2_2 }}
+                                  {{ form.pregunta2_2 }}
                                 </div>
                                 {% include 'base.form.errors.html' with form_errors=form.pregunta2_2.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                              </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group {% if form.frente_pregunta3.errors %}has-error{% endif %}">
-                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta3.auto_id }}">
-                                {{ form.pregunta3.label }}
-                            </label>
-                            <div class="col-md-9 col-xs-9 col-sm-9">
-                                <div class="form-inline">
-                                    {{ form.pregunta3 }}
-                                    <i class="ion ion-ios-medical item-requerido"></i>
+                      </div>
+                        <div class="row">
+                          <div id="bloque_pregunta4" class="invisible">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group {% if form.prregunta4.errors %}has-error{% endif %}">
+                                <label class="col-md-6 col-xs-6 col-sm-6 control-label" for="{{ form.pregunta4.auto_id }}">
+                                                      {{ form.pregunta4.label }}
+                                                  </label>
+                                <div class="col-md-6 col-xs-6 col-sm-6">
+                                  <div class="form-inline">
+                                    {{ form.pregunta4 }}
+                                  </div>
+                                  {% include 'base.form.errors.html' with form_errors=form.pregunta4.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
                                 </div>
-                                {% include 'base.form.errors.html' with form_errors=form.pregunta3.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                    <div id="bloque_pregunta4" class="invisible">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <div class="form-group {% if form.prregunta4.errors %}has-error{% endif %}">
-                                <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.pregunta4.auto_id }}">
-                                    {{ form.pregunta4.label }}
-                                </label>
-                                <div class="col-md-9 col-xs-9 col-sm-9">
-                                    <div class="form-inline">
-                                        {{ form.pregunta4 }}
-                                    </div>
-                                    {% include 'base.form.errors.html' with form_errors=form.pregunta4.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                          </div>
 
-                <div class="text-right">
-                    <button type="reset" class="btn btn-primary btn-sm" data-toggle="tooltip">{% trans 'Limpiar' %}</button>
-                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="tooltip">{% trans 'Registrar' %}</button>
-                </div>
-            </form>
-        </div>
-    </div>
+
+                        </div>
+
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+                      </div>
+                  <!-- </div> -->
+              </div>
+              <div class="row setup-content" id="step-4">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="form-group {% if form.frente_pregunta3.errors %}has-error{% endif %}">
+                            <label class="col-md-8 col-xs-8 col-sm-8 control-label" for="{{ form.pregunta3.auto_id }}">
+                                                {{ form.pregunta3.label }}
+                                            </label>
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                              <div class="form-inline">
+                                {{ form.pregunta3 }}
+                                <!-- <i class="ion ion-ios-medical item-requerido"></i> -->
+                              </div>
+                              {% include 'base.form.errors.html' with form_errors=form.pregunta3.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-5">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+
+                          <p class="pull-center"><strong>¡Gracias por participar en la Encuensta!</strong></p>
+
+                          <button type="submit" class="btn btn-primary nextBtn btn-lg pull-right" data-toggle="tooltip">{% trans 'Registrar' %}</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+          </div>
+
+          <!-- fin de nuevos datos -->
 {% endblock %}
-
 {% block extra_footer %}
-    <script type="text/javascript">
-        function __pregunta2(val)
-        {
-            if(val=="S")
-            {
-                $("#bloque_pregunta2_1").removeClass('invisible');
-                $("#bloque_pregunta4").removeClass('invisible');
-                $("#bloque_pregunta2_2").addClass('invisible');
-            }
-            else if(val=="N")
-            {
-                $("#bloque_pregunta2_1").addClass('invisible');
-                $("#bloque_pregunta4").addClass('invisible');
-                $("#bloque_pregunta2_2").removeClass('invisible');
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
             }
         }
-    </script>
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+    });
+    function __pregunta2(val) {
+      if (val == "S") {
+        $("#bloque_pregunta2_1").removeClass('invisible');
+        $("#bloque_pregunta4").removeClass('invisible');
+        $("#bloque_pregunta2_2").addClass('invisible');
+      } else if (val == "N") {
+        $("#bloque_pregunta2_1").addClass('invisible');
+        $("#bloque_pregunta4").addClass('invisible');
+        $("#bloque_pregunta2_2").removeClass('invisible');
+      }
+    }
+</script>
 {% endblock %}

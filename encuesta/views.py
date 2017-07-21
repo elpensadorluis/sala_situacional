@@ -19,7 +19,7 @@ class Encuesta1Create(CreateView):
     model = Encuesta1
     form_class = Encuesta1Form
     template_name = "encuesta1.registro.html"
-    success_url = reverse_lazy('encuesta1_lista')
+    success_url = reverse_lazy('encuesta1_registro')
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -36,4 +36,5 @@ class Encuesta1Create(CreateView):
         return super(Encuesta1Create, self).form_valid(form)
 
     def form_invalid(self, form):
+        print(form.errors)
         return super(Encuesta1Create, self).form_invalid(form)

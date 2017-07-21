@@ -21,12 +21,12 @@ class Encuesta1(models.Model):
         max_length=18, help_text=_("Número telefónico de contacto con la persona"),
         validators=[
             validators.RegexValidator(
-                r'^\(\+058\)-\d{3}-\d{7}$',
+                r'^\(\+\d{3}\)-\d{3}-\d{7}$',
                 _("Número telefónico inválido. Solo se permiten números y los símbolos: '(', ')', '-', '+'")
             ),
         ]
     )
 
-    pregunta4 = models.CharField(max_length=2, choices=PREGUNTA4)
+    pregunta4 = models.CharField(max_length=1, choices=PREGUNTA4)
 
     user = models.ForeignKey(User)
