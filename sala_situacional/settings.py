@@ -83,20 +83,19 @@ WSGI_APPLICATION = 'sala_situacional.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-
     #'default': {
-    #    #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #	'ENGINE':	'django.db.backends.mysql',
-    #    'NAME': 'sala_situacional',
-    #    'USER': 'admin',
-    #    'PASSWORD': '123456',
-    #    'HOST': 'localhost',
-    #    'PORT': '3306',
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'sala_situacional',
+        'USER': 'admin',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
