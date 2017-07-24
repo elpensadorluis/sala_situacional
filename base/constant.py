@@ -45,8 +45,26 @@ PREGUNTA2_2 = (
 )
 
 PREGUNTA3 = (
-    ("a",_("Candidato de la Revolución")),
+    ("a",_("Candidato del Oficialismo")),
     ("b",_("Candidato de la Oposición")),
     ("c",_("Candidato Independiente")),
     ("d",_("No votaría")),
+)
+
+PREGUNTA4 = (
+    ("a",_("1.- Jehyson Jose Guzman Araque / Simon Pablo Figueroa")),
+    ("b",_("2.- Agustin Alexis Alvarez Tovar / Lorenza Ullan Severino")),
+    ("c",_("3.- Betty Carolina PeÑa Lopez")),
+    ("d",_("4.- Elias Rafael Sanchez Verde / Juan Carlos Lenzo")),
+    ("e",_("5.- Enrique Antonio Plata Ramirez / Teresa De Jesus Mora ")),
+    ("f",_("6.- Nelsy Carolina Rivera Quinchoa")),
+    ("g",_("7.- Luis Carlos Perales Araque")),
+    ("h",_("8.- Johnny Rafael Andrade Barreto")),
+    ("i",_("9.- Jorge David Sandoval Rujano")),
+    ("j",_("10.- Gracian Claret Rondon Dezeo")),
+    ("k",_("11.- Greny Rosana Uzcategui Lacruz")),
+    ("l",_("12.- Hector Ramon Rojas Pernia")),
+    ("m",_("13.- Wilmer Arquimedes Iglesias Pino / Ramon David Fajardo Guanipa")),
+    ("n",_("14.- Alirio Jose Liscano ")),
+    ("o",_("15.- Jose Rafael Luna ")),
 )
